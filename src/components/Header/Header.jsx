@@ -23,7 +23,6 @@ const Header = ({setCoordinates}) => {
         <Typography variant="h6" className={classes.title}>
           Explore New Places
         </Typography>
-        {/* <Autocomplete> */}
         <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -32,7 +31,6 @@ const Header = ({setCoordinates}) => {
             <InputBase placeholder="search..." classes={{root: classes.inputRoot, input: classes.inputInput}} />
           </div>
           </Autocomplete>
-        {/* </Autocomplete> */}
         </Box>
       </Toolbar>
     </AppBar>

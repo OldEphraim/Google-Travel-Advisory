@@ -7,7 +7,6 @@ const List = ({places, childClicked, isLoading, type, setType, rating, setRating
   const classes = useStyles();
   const [elementRefs, setElementRefs] = useState([]);
   useEffect(() => {
-    // using Array(places.length) caused whole App to crash?
     const refs = Array(places?.length).fill().map((_, i) => elementRefs[i] || createRef());
     setElementRefs(refs);
   }, [places])
@@ -36,8 +35,8 @@ const List = ({places, childClicked, isLoading, type, setType, rating, setRating
         </Select>
       </FormControl>
       <Grid container spacing={3} className={classes.list}>
-        {places ?.map((place, i) => (
-          <Grid item key={i} xs={12}>
+        {places?.map((place, i) => (
+          <Grid item key={i} xs={12} ref={elementRefs[i]}>
             <PlaceDetails place={place} selected={Number(childClicked) === i} refProp={elementRefs[i]} />
           </Grid>
         ))}
